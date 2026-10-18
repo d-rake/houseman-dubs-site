@@ -6,7 +6,7 @@
 <nav aria-label="Main navigation"><a href="index.html">Project</a><a href="privacy.html" aria-current="page">Privacy</a><a href="terms.html">Terms</a></nav></header>
 <main id="main"><p class="eyebrow">HOUSEMAN DUBS / PROJECT INFORMATION</p><h1>Privacy policy</h1><p><strong>Effective date:</strong> 2026-10-18 · <strong>Contact:</strong> drake.mooneyham@gmail.com</p>
 <h2>Who we are</h2>
-<p>Houseman Dubs is the animated alter-ego of music producer drake mooneyham. &quot;Houseman Dubs Scheduler&quot; (the &quot;App&quot;) is a private command-line tool that drake mooneyham runs on his own computer to upload and schedule videos on his own YouTube channel, Houseman Dubs. The App has no other users, no customers and no public interface. This policy explains what the App does with data.</p>
+<p>Houseman Dubs is the animated alter-ego of music producer drake mooneyham. &quot;Houseman Dubs Scheduler&quot; (the &quot;App&quot;) is a private command-line tool that drake mooneyham runs on his own computer to prepare uploads and scheduling for his own YouTube channel, Houseman Dubs, after configuration and approval. The App has no other users, no customers and no public interface. This policy explains what the App does with data.</p>
 <h2>The App uses YouTube API Services</h2>
 <p>The App uses <strong>YouTube API Services</strong> (the YouTube Data API v3) to work with the Houseman Dubs YouTube channel. By using the App you are also subject to the <strong>Google Privacy Policy</strong>: <a href="http://www.google.com/policies/privacy">http://www.google.com/policies/privacy</a></p>
 <h2>What data the App accesses</h2>
@@ -16,20 +16,21 @@
 <li>the videos the App uploads, their titles, descriptions, tags, privacy status, scheduled publish time and custom thumbnails;</li>
 <li>the channel&#x27;s playlists and playlist items (to add new uploads to the channel&#x27;s own playlists).</li>
 </ul>
-<p>The intended upload/channel-management OAuth scopes are <code><a href="https://www.googleapis.com/auth/youtube.upload">https://www.googleapis.com/auth/youtube.upload</a></code> and <code><a href="https://www.googleapis.com/auth/youtube">https://www.googleapis.com/auth/youtube</a></code>. Google&#x27;s consent screen identifies the permissions actually requested before the owner grants access. The owner reviews this policy and the terms before authorizing the App. It does <strong>not</strong> access any other user&#x27;s data, comments, subscribers&#x27; personal information, YouTube Analytics or Reporting data, or Google account data beyond what Google&#x27;s sign-in returns to identify the channel.</p>
+<p>The current yutu 0.11.0 client requests these OAuth scopes: <code><a href="https://www.googleapis.com/auth/youtube">https://www.googleapis.com/auth/youtube</a></code>, <code><a href="https://www.googleapis.com/auth/youtube.force-ssl">https://www.googleapis.com/auth/youtube.force-ssl</a></code> and <code><a href="https://www.googleapis.com/auth/youtube.channel-memberships.creator">https://www.googleapis.com/auth/youtube.channel-memberships.creator</a></code>. These grant broader permissions than the scheduler needs. The scheduler does not use channel-membership information or comment-management functions. Google&#x27;s consent screen identifies the permissions requested before the owner grants access. The owner reviews this policy and the terms before authorizing the App. It does <strong>not</strong> access any other user&#x27;s data, comments, subscribers&#x27; personal information, YouTube Analytics or Reporting data, or Google account data beyond what Google&#x27;s sign-in returns to identify the channel.</p>
 <h2>How the data is used</h2>
 <p>Only to do what the channel owner asks: upload a finished video as private with a scheduled publish time, set its thumbnail, add it to a playlist, and read back the upload&#x27;s status. The data is not used for advertising, profiling, analytics products or any other purpose.</p>
 <h2>What is stored, where, and for how long</h2>
 <ul>
 <li><strong>OAuth token:</strong> stored only on the channel owner&#x27;s computer (a local token file, never in a shared or public location) so the App can act without signing in on every run. The owner deletes it after access is revoked, within the period below; revocation is not a claim that local files delete themselves.</li>
 <li><strong>Upload records:</strong> the App may keep a local log of the video IDs it created and their scheduled times, on the same computer. Stored YouTube API data is refreshed (re-read from the API) or deleted <strong>within 30 days</strong>.</li>
-<li>The App runs no server, keeps no database in the cloud, and sends YouTube API data to <strong>no third party</strong>.</li>
+<li>The App has no externally hosted server or cloud database. During Google authorization, yutu temporarily listens on the owner&#x27;s computer for the local OAuth callback.</li>
+<li>When the owner operates the command-line tool through an AI assistant, selected command output (such as channel identity or upload status) may be processed by that assistant&#x27;s provider under its own privacy terms. OAuth credentials and tokens stay in private local files and must not be included in assistant messages or logs. The App does not sell data or send it to advertisers.</li>
 </ul>
 <h2>Sharing</h2>
 <p>The App shares no data with anyone. Videos become public on YouTube only when the channel owner schedules or publishes them, under YouTube&#x27;s own terms.</p>
 <h2>Revoking access and deleting data</h2>
 <ul>
-<li>You can revoke the App&#x27;s access at any time from Google&#x27;s security settings: <a href="https://security.google.com/settings/security/permissions">https://security.google.com/settings/security/permissions</a> (choose &quot;Houseman Dubs Scheduler&quot;, then &quot;Remove access&quot;).</li>
+<li>You can revoke the App&#x27;s access at any time from Google&#x27;s security settings: <a href="https://security.google.com/settings/security/permissions">https://security.google.com/settings/security/permissions</a> (the current Google OAuth app name is <strong>&quot;money-music&quot;</strong>, shared with the owner&#x27;s Drive/Calendar project; choose that app, then &quot;Remove access&quot;). Revoking that shared app may also interrupt the owner&#x27;s other connected workflows.</li>
 <li>After access is revoked, or on a deletion request sent to drake.mooneyham@gmail.com, the owner deletes all stored YouTube API data and the OAuth token <strong>within 7 days</strong>.</li>
 <li>Videos already uploaded to YouTube stay on the channel until the channel owner deletes them in YouTube Studio.</li>
 </ul>
